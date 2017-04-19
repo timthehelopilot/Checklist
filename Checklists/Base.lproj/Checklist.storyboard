@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Checklists-->
+        <!--Name of the Checklist-->
         <scene sceneID="Y82-ts-c2z">
             <objects>
                 <tableViewController id="add-FD-z0O" customClass="ChecklistViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="add-FD-z0O" id="G46-Zo-FQ6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Checklists" id="GKL-sc-8mN">
+                    <navigationItem key="navigationItem" title="Name of the Checklist" id="GKL-sc-8mN">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Xs7-ur-zlY">
                             <connections>
                                 <segue destination="qfl-1E-WtZ" kind="presentation" identifier="AddItem" id="oJp-dj-PvP"/>
@@ -62,6 +62,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9T9-3M-wqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1104.375" y="152.11267605633802"/>
+        </scene>
+        <!--Checklists-->
+        <scene sceneID="buP-h3-bCf">
+            <objects>
+                <tableViewController id="oBo-yO-Jb3" customClass="AllListsViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ofB-55-KUH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="oBo-yO-Jb3" id="Xq3-TX-OCj"/>
+                            <outlet property="delegate" destination="oBo-yO-Jb3" id="Kj9-6q-WKR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Checklists" id="oug-Qs-eZv">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="p87-aw-bEs"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="add-FD-z0O" kind="show" identifier="ShowChecklist" id="fem-rO-Abl"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lN4-nq-KB9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197" y="152"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="ogv-Bu-vid">
@@ -135,12 +159,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="add-FD-z0O" kind="relationship" relationship="rootViewController" id="Ptw-uO-OBr"/>
+                        <segue destination="oBo-yO-Jb3" kind="relationship" relationship="rootViewController" id="Bcg-Nx-1OJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lcj-Ph-12K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106.875" y="152.11267605633802"/>
+            <point key="canvasLocation" x="-660" y="152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8YQ-Fe-o7p">
