@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6A2D05261EA6F159008FF74B /* AllListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D05251EA6F159008FF74B /* AllListsViewController.swift */; };
 		6A2D05281EA6F7C2008FF74B /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2D05271EA6F7C2008FF74B /* Checklist.swift */; };
+		6A38EC641EA810FB00AEFD2E /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A38EC631EA810FB00AEFD2E /* ListDetailViewController.swift */; };
 		6AF3B4951EA3CC0300AF91D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B4941EA3CC0300AF91D6 /* AppDelegate.swift */; };
 		6AF3B4971EA3CC0300AF91D6 /* ChecklistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF3B4961EA3CC0300AF91D6 /* ChecklistViewController.swift */; };
 		6AF3B49A1EA3CC0400AF91D6 /* Checklist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AF3B4981EA3CC0400AF91D6 /* Checklist.storyboard */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		6A2D05251EA6F159008FF74B /* AllListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllListsViewController.swift; sourceTree = "<group>"; };
 		6A2D05271EA6F7C2008FF74B /* Checklist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
+		6A38EC631EA810FB00AEFD2E /* ListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
 		6AF3B4911EA3CC0300AF91D6 /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AF3B4941EA3CC0300AF91D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AF3B4961EA3CC0300AF91D6 /* ChecklistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChecklistViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -64,6 +66,7 @@
 			children = (
 				6AF3B4941EA3CC0300AF91D6 /* AppDelegate.swift */,
 				6A2D05251EA6F159008FF74B /* AllListsViewController.swift */,
+				6A38EC631EA810FB00AEFD2E /* ListDetailViewController.swift */,
 				6AF3B4961EA3CC0300AF91D6 /* ChecklistViewController.swift */,
 				6AF64A5F1EA446A700022F7B /* ItemDetailViewController.swift */,
 				6AF3B4981EA3CC0400AF91D6 /* Checklist.storyboard */,
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AF3B4971EA3CC0300AF91D6 /* ChecklistViewController.swift in Sources */,
+				6A38EC641EA810FB00AEFD2E /* ListDetailViewController.swift in Sources */,
 				6AF64A601EA446A700022F7B /* ItemDetailViewController.swift in Sources */,
 				6A2D05281EA6F7C2008FF74B /* Checklist.swift in Sources */,
 				6AF64A5E1EA3F1DD00022F7B /* ChecklistItem.swift in Sources */,
@@ -277,11 +281,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = AQF45K48EJ;
 				INFOPLIST_FILE = Checklists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.t.barrett.jr-icloud.Checklists";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -290,11 +296,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = AQF45K48EJ;
 				INFOPLIST_FILE = Checklists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.t.barrett.jr-icloud.Checklists";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
