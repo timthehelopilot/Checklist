@@ -13,6 +13,19 @@ class DataModel {
   
   var lists = [Checklist]()
   
+  var indexOfSelectedChecklist: Int {
+    
+    get {
+     
+      return UserDefaults.standard.integer(forKey: "ChecklistIndex")
+    }
+    
+    set {
+      
+      UserDefaults.standard.set(newValue, forKey: "ChecklistIndex")
+    }
+  }
+  
   func documentsDirectory() -> URL {
     
     let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -51,9 +64,17 @@ class DataModel {
     }
   }
   
+  func registerDefaults() {
+    
+    let dictionary: [String: Any] = ["ChecklistIndex": -1]
+    
+    UserDefaults.standard.register(defaults: dictionary)
+  }
+  
   init() {
     
     loadChecklists()
+    registerDefaults()
   }
   
 }
