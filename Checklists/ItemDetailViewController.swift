@@ -57,6 +57,7 @@ class ItemDetailViewController: UITableViewController {
     if let item = itemToEdit {
       
       item.text = addItemTextField.text!
+      
       delegate?.itemDetailViewController(self, didFinishEditing: item)
       
     } else {
@@ -64,6 +65,7 @@ class ItemDetailViewController: UITableViewController {
       let item = ChecklistItem()
       item.text = addItemTextField.text!
       item.checked = false
+      
       delegate?.itemDetailViewController(self, didFinishAdding: item)
     }
   }

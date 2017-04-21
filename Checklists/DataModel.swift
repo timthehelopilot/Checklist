@@ -61,12 +61,13 @@ class DataModel {
       lists = unarchiver.decodeObject(forKey: "Checklists") as! [Checklist]
       
       unarchiver.finishDecoding()
+      sortChecklists()
     }
   }
   
   func registerDefaults() {
     
-    let dictionary: [String: Any] = ["ChecklistIndex": -1]
+    let dictionary: [String: Any] = ["ChecklistIndex": -1, "FirstTime": true]
     
     UserDefaults.standard.register(defaults: dictionary)
   }
@@ -75,6 +76,30 @@ class DataModel {
     
     loadChecklists()
     registerDefaults()
+    handleFirstTime()
   }
   
+  func handleFirstTime() {
+    
+    let userDefaults = UserDefaults.standard
+    let firstTime = userDefaults.bool(forKey: "FirstName")
+    
+    if firstTime {
+      
+      let checklist = Checklist(name: "List")
+      lists.append(checklist)
+      
+      indexOfSelectedChecklist = 0
+      userDefaults.set(false, forKey: "FirstTime")
+      userDefaults.synchronize()
+    }
+  }
+  
+  func sortChecklists() {
+    
+    lists.sort(by:{ checklist1, checklist2 in
+      
+      return checklist1.name.localizedStandardCompare(checklist2.name) == .orderedAscending
+    })
+  }
 }
