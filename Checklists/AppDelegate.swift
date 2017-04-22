@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
   var window: UIWindow?
   
@@ -18,10 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
     let navigationController = window?.rootViewController as! UINavigationController
-    
     let controller = navigationController.viewControllers[0] as! AllListsViewController
-    
     controller.dataModel = dataModel
+    
+    let center = UNUserNotificationCenter.current()
+    center.delegate = self
     
     return true
   }
@@ -52,7 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func saveData() {
    
     dataModel.saveChecklists()
-    
   }
 }
 
